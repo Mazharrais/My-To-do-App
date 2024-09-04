@@ -1,13 +1,15 @@
 
+import { Provider } from 'react-redux'
 import './App.css'
+import ToDoApp from './components/ToDoApp'
 
 function App() {
   
 
   return (
-    <>
-      <h1 className='text-red-700'>Mazhar Rais...!</h1>
-    </>
+    <Provider>
+      <ToDoApp />
+    </Provider>
   )
 }
 
