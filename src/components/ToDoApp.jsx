@@ -13,9 +13,13 @@ const ToDoApp = () => {
 
   const handleAddTodo = (text) => {
     dispatch(addTodo(text));
+    
   }
+  
 
   const saveTodo = () => {
+    console.log(saveTodo);
+    
     if (todoText.trim() !== "") {
       handleAddTodo(todoText.trim());
       setTodoText("")
@@ -33,14 +37,15 @@ const ToDoApp = () => {
 
       {/* Input Button */}
 
-      <div className='flex item-center mb-4'>
+      <div className='flex items-center mb-4'>
         <input type='text' placeholder='Enter your Task'
-          className='flex grow p-2 border-b-2 border-grey-300 rounded focus:outline-none focus:border-blue-500'
+          className='flex-grow p-2 border-b-2 border-gray-300 rounded focus:outline-none focus:border-blue-500'
           name='text'
           id='addTodo'
           onChange={(e) => setTodoText(e.target.value)} />
-        <button className='ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue
+        <button className='ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-800
            focus:outline-none' onClick={saveTodo}>
+            
           <FaArrowAltCircleRight /></button>
       </div>
 
@@ -58,9 +63,12 @@ const ToDoApp = () => {
           value={searchText}
           name='text'
           onChange={(e) => handleSearchTodo(e.target.value)}
-          id='flex-grow rounded p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 sm:mr-4'
+          id= "addTodo" 
+          className='flex-grow rounded p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 sm:mr-4'
           />
-   <button className='p-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none' onClick={saveTodo}>
+   <button 
+   className='p-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none' 
+   onClick={saveTodo}>
     <BsSearch />
    </button>
           </div>

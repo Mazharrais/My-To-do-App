@@ -1,4 +1,4 @@
-import { ADD_TODO, FILTER_TODO, MARK_ALL_COMPLETED_TODO, MARK_COMPLETED_TODO,
+import { ADD_TODO, FILTER_TODO, MARL_ALL_COMPLETED_TODO, MARK_COMPLETED_TODO,
      MARK_INCOMPLETE_TODO,
      REMOVE_TODO, SEARCH_TODO, TOGGLE_TODO } from "./actionTypes";
 
@@ -31,7 +31,7 @@ export const updateSearchTodo = (search)=>({
     payLoad: {search}
 })
 export const markAllCompleted = ()=>({
-    type: MARK_ALL_COMPLETED_TODO,
+    type: MARL_ALL_COMPLETED_TODO,
 
    
 })

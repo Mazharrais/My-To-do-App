@@ -1,4 +1,4 @@
-import {ADD_TODO, FILTER_TODO, MARK_ALL_COMPLETED_TODO, MARK_COMPLETED_TODO, MARK_INCOMPLETE_TODO,
+import {ADD_TODO, FILTER_TODO, MARL_ALL_COMPLETED_TODO, MARK_COMPLETED_TODO, MARK_INCOMPLETE_TODO,
      REMOVE_TODO, SEARCH_TODO, TOGGLE_TODO} from '../Action/actionTypes';
 
 
@@ -61,7 +61,7 @@ const todoReducer = (state = initialState, action) =>{
                 filter: state.filter,
                 search: action.payload.search
             } 
-         case MARK_ALL_COMPLETED_TODO:
+         case MARL_ALL_COMPLETED_TODO:
             return{
                 todos:state.todos.map((todo)=>
                 ({

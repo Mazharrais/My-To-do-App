@@ -25,7 +25,7 @@ const List = () => {
   return(
     <ul>
         {
-            filterTodos.map((todo, i)=>{
+            filteredTodos.map((todo, i)=>{
                 <TodoItems key={i} todo={todo} index={i} />
             })
         }
