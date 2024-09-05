@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import {addTodo} from '../Redux/Action/action';
+import {addTodo, updateSearchTodo} from '../Redux/Action/action';
 import FilterButton from './FilterButton';
 
 const ToDoApp = () => {
   const [todoText, setTodoText] = useState("");
+  const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
 
    const handleAddTodo = (text) =>{
@@ -17,6 +18,9 @@ const ToDoApp = () => {
       handleAddTodo(todoText.trim());
       setTodoText("")
     }
+   }
+   const  handleSearchTodo = (value)=>{
+    dispatch(updateSearchTodo(value))
    }
 
   return (
@@ -42,6 +46,21 @@ const ToDoApp = () => {
        <div className='flex items-center justify-between flex-wrap'> 
        <FilterButton />
        </div>
+    
+         {/* Search */}
+
+         <div className='flex items-center justify-end mt-4 sm:mt-0'>
+          <input 
+          type='text'
+          placeholder='search'
+          value={searchText}
+          name='text'
+          onChange={(e)=>handleSearchTodo(e.target.value)}
+
+          />
+
+         </div>
+
 
 
     </div>
