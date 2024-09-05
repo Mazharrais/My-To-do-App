@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import {addTodo} from '../Redux/Action/action';
+import FilterButton from './FilterButton';
 
 const ToDoApp = () => {
   const [todoText, setTodoText] = useState("");
@@ -33,9 +34,14 @@ const ToDoApp = () => {
            onChange={(e)=> setTodoText(e.target.value)}  />
           <button className='ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue
            focus:outline-none' onClick={saveTodo}>
-            <FaArrowAltCircleRight />Add</button>
-
+            <FaArrowAltCircleRight /></button>
      </div>
+  
+       {/* Filter Search */}
+       
+       <div className='flex items-center justify-between flex-wrap'> 
+       <FilterButton />
+       </div>
 
 
     </div>
